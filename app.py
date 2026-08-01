@@ -44,7 +44,4 @@ TOOLS = [
          "required": ["content"]}}
 ]
 
-FUNCS = {"check_on_wife": check_on_wife, "ntfy_alert": ntfy_alert}
-
-app = FastAPI()
-app.add_middleware(COR
+FUNCS = {"check_on_wife": check_on_wife, "ntfy_alert": ntfy
