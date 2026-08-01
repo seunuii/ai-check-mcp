@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "build": "vercel-python",
+      "config": {
+        "runtime": "python3.x",
+        "includeFiles": "**/*.py",
+        "excludeFiles": ""
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ]
+}
+
