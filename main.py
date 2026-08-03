@@ -1,3 +1,4 @@
+app = FastAPI()
 import json, os, requests
 from datetime import datetime, timedelta
 from fastapi import FastAPI, Request
@@ -45,3 +46,5 @@ TOOLS = [
 ]
 
 FUNCS = {"check_on_wife": check_on_wife, "ntfy_alert": ntfy
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
