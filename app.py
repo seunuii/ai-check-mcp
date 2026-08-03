@@ -1,3 +1,4 @@
+app = FastAPI()
 import json, os, requests
 from datetime import datetime, timedelta
 from fastapi import FastAPI, Request
