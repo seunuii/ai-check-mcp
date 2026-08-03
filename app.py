@@ -1,4 +1,3 @@
-app = FastAPI()
 import json, os, requests
 from datetime import datetime, timedelta
 from fastapi import FastAPI, Request
@@ -34,17 +33,3 @@ def ntfy_alert(title="查岗", content=""):
                           timeout=10)
         return "推送成功" if r.status_code == 200 else f"推送失败：{r.status_code}"
     except Exception as e:
-        return f"推送异常：{e}"
-
-TOOLS = [
-    {"name": "check_on_wife", "description": "查岗老婆的手机活动",
-     "inputSchema": {"type": "object", "properties": {"limit": {"type": "integer"}}}},
-    {"name": "ntfy_alert", "description": "给老婆手机发推送弹窗",
-     "inputSchema": {"type": "object", "properties": {
-         "title": {"type": "string"}, "content": {"type": "string"}},
-         "required": ["content"]}}
-]
-
-FUNCS = {"check_on_wife": check_on_wife, "ntfy_alert": ntfy
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
