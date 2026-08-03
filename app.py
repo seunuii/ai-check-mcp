@@ -1,6 +1,6 @@
-from fastapi import FastAPI
-app = FastAPI()
-import json, os, requests
+import json
+import os
+import requests
 from datetime import datetime, timedelta
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -49,4 +49,21 @@ TOOLS = [
 FUNCS = {"check_on_wife": check_on_wife, "ntfy_alert": ntfy_alert}
 
 app = FastAPI()
-app.add_middleware(CORSMiddleware, allow_
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/")
+def root():
+    return {"message": "FastAPI is running", "status": "ok"}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
