@@ -1,0 +1,8 @@
+name = "ai-check-mcp"
+main = "src/index.js"
+compatibility_date = "2026-08-04"
+
+[vars]
+NTFY_TOPIC = "jamesjuhoon"
+ORIGIN_API = "https://web-production-5c189.up.railway.app"
+AUTH_TOKEN = "Jh3k9xQw2mPv8LzT5nYc"
