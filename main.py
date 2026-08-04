@@ -7,8 +7,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 app = FastAPI()
 JST = timedelta(hours=9)
-ORIGIN = os.environ.get("ORIGIN_API", "https://web-production-5c189.up.railway.app")
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "jamesjuhoon")
+ORIGIN_API = os.environ.get("ORIGIN_API", "https://web-production-5c189.up.railway.app")
+
 
 def check_on_wife(limit=10):
     try:
